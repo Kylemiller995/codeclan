@@ -1,2 +1,3 @@
 # e15_classnotes
-E15 Classnotes
+
+Lesson notes and code examples for cohort e15 Codeclan students.
