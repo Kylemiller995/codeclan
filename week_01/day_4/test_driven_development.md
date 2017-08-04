@@ -1,11 +1,11 @@
-> ### Learning Objectives
-> 
-> - Know what a test is.
-> - Know what TDD is.
-> - Understand the benefits of writing tests first
-> - Be able to write unit tests, and make them pass
-
 # Test Driven Development
+
+### Learning Objectives
+
+- Know what a test is.
+- Know what TDD is.
+- Understand the benefits of writing tests first
+- Be able to write unit tests, and make them pass
 
 ## What is a test?
 
