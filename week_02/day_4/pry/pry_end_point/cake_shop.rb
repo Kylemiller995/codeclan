@@ -1,4 +1,4 @@
-require("pry")
+require('pry')
 
 class CakeShop
 
@@ -10,18 +10,19 @@ class CakeShop
 
   def average_cake_rating()
 
-    ratings = @cakes.map { |cake| cake.rating }
-    ratings_sum = 0
+    ratings = @cakes.map { |cake| cake[:rating] }
+    total = 0
 
     for rating in ratings
       binding.pry
-      ratings_sum += rating
+      total += rating
     end
 
-    average = ratings_sum / ratings.length
-
+    average = total.to_f() / ratings.count().to_f()
     return average
 
   end
 
 end
+
+
