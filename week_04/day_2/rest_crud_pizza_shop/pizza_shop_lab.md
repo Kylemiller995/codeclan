@@ -1,6 +1,6 @@
 # Pizza Shop Lab
 
-We're about halfway finished on our RESTful pizza shop web app. We still need to add routes for `edit`, `update` `show` and `delete` actions.
+We're about halfway finished on our RESTful pizza shop web app. We still need to add routes for `edit`, `update` and `delete` actions.
 
 Funnily enough, that's exactly what we're doing in this lab! Go ahead and write these routes and finish our app.
 
@@ -27,5 +27,4 @@ All POST routes must be sent from `<form>`s.
 * After the deleting a pizza, it might be sensible to send the user back to the list of all pizzas, which is called a _redirect_. Research how to make this happen in Sinatra.
 * Your `edit` route will take users to a form, just like the `new` route. Only this time, the form should be pre-populated with the current data for the specific order we want to edit.
 * Your `update` route will probably look pretty similar to the `create` route.
-* Your `show` route will select one pizza from the database and display it's details. HINT: It will have to go after the `new` route.
 * Remember to add links where appropriate! These might be on the nav bar so they are always visible, or they might be on every item in the `index`, or might be on the `show` view... It's up to you!
