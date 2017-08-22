@@ -22,7 +22,7 @@ All POST routes must be sent from `<form>`s.
 
 ## Hints
 
-* Start with the `delete` route. It is the simple one, as it only does one, fairly small thing. You can either make it an instance method, and delete the current object. Or add a `self.delete(id)` method which uses the id in the URL to identify which order to delete.
+* Start with the `delete` route. It is the simple one, as it only does one, fairly small thing.
 * Although the `delete` route is the least complicated, it relies on a POST request, because it is changing the resource on the server. Unfortunately we can't make a hyperlink to a POST request, we have to use a button inside a `<form>` with its method and action properly set. You saw how to do this in the `new` form. You could put this form on the `show` page for a specific pizza, or on the `index` page if you'd prefer that.
 * After the deleting a pizza, it might be sensible to send the user back to the list of all pizzas, which is called a _redirect_. Research how to make this happen in Sinatra.
 * Your `edit` route will take users to a form, just like the `new` route. Only this time, the form should be pre-populated with the current data for the specific order we want to edit.
