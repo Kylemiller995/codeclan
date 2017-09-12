@@ -14,4 +14,3 @@ Competitions should be able to add athletes, and then show the winner.  Competit
 This list may well change/grow in the future. For example fastest 10k.
 
 TDD please.
-Evaluate the SOLIDness of your code.
