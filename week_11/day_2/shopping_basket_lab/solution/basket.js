@@ -48,7 +48,7 @@ Basket.prototype.calcItem = function(item) {
 Basket.prototype.total = function() {
   var total = 0;
 
-  for (item of this.items) {
+  for (var item of this.items) {
     var subTotal = this.calcItem(item);
     total += subTotal;
   }
