@@ -1,13 +1,9 @@
 var Bank = function() {
-  this.accounts = []
+  this.accounts = [];
 }
 
-Bank.prototype = {
-
-  addAccount: function(account) {
-    this.accounts.push(account)
-  }
-
+Bank.prototype.addAccount = function(account) {
+  this.accounts.push(account);
 }
 
 module.exports = Bank;

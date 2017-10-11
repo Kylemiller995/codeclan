@@ -12,3 +12,4 @@ The tests will ask you to make your bank able to:
 - Add 10% interest to the value of all accounts.
 - Find the account with the largest value.
 - Find the average value of all account.
+- Get an array of only the business accounts

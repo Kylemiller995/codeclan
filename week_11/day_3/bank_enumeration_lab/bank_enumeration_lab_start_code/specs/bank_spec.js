@@ -4,18 +4,18 @@ var Account = require('../account.js')
 
 describe('Bank', function() {
 
+  var bank;
   var account1;
   var account2;
   var account3;
   var account4;
-  var bank;
 
   beforeEach(function() {
+    bank = new Bank();
     account1 = new Account("Sian", 60, "personal");
     account2 = new Account("Keith", 10, "business");
     account3 = new Account("Harrison", 90, "business");
     account4 = new Account("Craig", 5, "personal");
-    bank = new Bank();
     bank.addAccount(account1);
     bank.addAccount(account2);
     bank.addAccount(account3);
