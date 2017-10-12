@@ -18,34 +18,34 @@ describe("Record Collector Tests", function() {
   });
 
   it("Record collector's has cash of 8.00", function() {
-    assert.equal(8.00, recordCollector.cash);
+    assert.equal(recordCollector.cash, 8.00);
   });
 
   it("Record collector can buy a record", function() {
     recordCollector.buyRecord(record2);
-    assert.equal(1, recordCollector.collection.length);
+    assert.equal(recordCollector.collection.length, 1);
   });
 
   it("Record collector's cash goes down when buying record", function() {
     recordCollector.buyRecord(record2);
-    assert.equal(0.50, recordCollector.cash);
+    assert.equal(recordCollector.cash, 0.50);
   });
 
   it("Record can't buy record if not enough cash", function() {
-    assert.equal("Sorry you can't afford this record", recordCollector.buyRecord(record));
-    assert.equal(0, recordCollector.collection.length);
+    assert.equal(recordCollector.buyRecord(record), "Sorry you can't afford this record");
+    assert.equal(recordCollector.collection.length, 0);
   });
 
   it("Record Collector can sell record", function() {
     recordCollector.buyRecord(record2);
     recordCollector.sellRecord(record2);
-    assert.equal(0, recordCollector.collection.length);
+    assert.equal(recordCollector.collection.length, 0);
   });
 
   it("Record Collectors cash increases when selling", function() {
     recordCollector.buyRecord(record2);
     recordCollector.sellRecord(record2);
-    assert.equal(8.00, recordCollector.cash);
+    assert.equal(recordCollector.cash, 8.00);
   });
 
 })
