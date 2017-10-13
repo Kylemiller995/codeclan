@@ -64,8 +64,11 @@ describe("Record Store tests", function() {
   });
 
   it("can return records of a given genre", function(){
-    var grungeRecords = RecordStore.findRecordsByGenre("grunge");
-    assert.strictDeepEqual();
+    recordStore.addRecord(record);
+    recordStore.addRecord(record2);
+    var grungeRecords = recordStore.findRecordsByGenre("grunge");
+    var expected = [record]
+    assert.deepStrictEqual(grungeRecords, expected);
   });
 
 })

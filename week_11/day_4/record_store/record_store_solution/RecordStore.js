@@ -33,8 +33,14 @@ RecordStore.prototype.calculateStockValue = function() {
 
 RecordStore.prototype.financeReport = function() {
   var stockValue = this.calculateStockValue();
-  return "Current Balance: " + this.balance + " Current Stock Value: " + stockValue
+  return "Current Balance: " + this.balance + " Current Stock Value: " + stockValue;
+}
 
+RecordStore.prototype.findRecordsByGenre = function(genre) {
+  var recordByGenre = this.inventory.filter(function(record){
+    return record.genre === genre;
+  })
+  return recordByGenre;
 }
 
 
