@@ -26,7 +26,7 @@ We also need a div for our map to live inside which we will add inside the body 
 ```html
 <!-- index.html -->
 
-<div id='main-map'> </div>
+  <div id='main-map'> </div>
 ```
 
 At the very least, this div must have a height or it won't display. Let's go to our main.css file in the public folder and give our map a width and a height.
@@ -46,7 +46,7 @@ Again we need to add a link to this in our HTML. Let's add it after the Google M
 ```html
 <!-- index.html -->
 
-<script src='app.js'> </script>
+ <script src='app.js'> </script>
 ```
 
 Cool now we are ready to add our map! Now, we need to make sure our map loads AFTER the DOM is ready and the elements we expect to be there exist. In our case, it's our "map" div. 
@@ -145,8 +145,8 @@ var MapWrapper = function(coords) { //UPDATE
 ```js
 //app.js
 var initialize = function() {
-var center = {lat: 51.507351, lng: -0.127758}; //NEW
-var mainMap = new MapWrapper(center); //UPDATE
+  var center = {lat: 51.507351, lng: -0.127758}; //NEW
+  var mainMap = new MapWrapper(center); //UPDATE
 }
 ```
 
@@ -164,8 +164,8 @@ var MapWrapper = function(container, coords, zoom) { //UPDATE
 
 ```js
 //app.js
-var mapDiv = document.getElementById('main-map'); //NEW
-var mainMap = new MapWrapper(mapDiv, center, 10); //UPDATE
+  var mapDiv = document.getElementById('main-map'); //NEW
+  var mainMap = new MapWrapper(mapDiv, center, 10); //UPDATE
 ```
 
 ## Markers
@@ -179,13 +179,14 @@ Let's make a new function on our MapWrapper prototype.
 ```js
 //mapWrapper.js
 
-MapWrapper.prototype.addMarker = function(coords) {
-  var marker = new google.maps.Marker({
-    position: coords,      
-    map: this.googleMap
-  });
+MapWrapper.prototype = {
+  addMarker: function(coords){
+    var marker = new google.maps.Marker({
+      position: coords,
+      map: this.googleMap
+    });
+  }
 }
-
 
 ```
 Let's add a marker to the centre of our map.
@@ -210,12 +211,14 @@ The simplest one is the click event on the whole map. Let's add a wee function t
 
 ```js
 //mapWrapper.js
+(in prototype)
+  // REMEMBER COMMA ON PREVIOUS LINE
 
-Mapwrapper.prototype.addClickEvent = function(){
-  google.maps.event.addListener(this.googleMap, 'click', function(event){
-    console.log("yo");
-  });
-}
+  addClickEvent: function(){
+    google.maps.event.addListener(this.googleMap, 'click', function(event){
+      console.log("yo");
+    });
+  }
 ```
 
 ```js
@@ -228,12 +231,12 @@ This function passes in an "event" object we can get properties from, including 
 ```js
 //mapWrapper.js
 
-Mapwrapper.prototype.addClickEvent = function(){
-  google.maps.event.addListener(this.googleMap, 'click', function(event){
-    console.log(event);
-    console.log(event.latLng.lat());
-  });
-}
+  addClickEvent: function(){
+    google.maps.event.addListener(this.googleMap, 'click', function(event){
+      console.log(event);
+      console.log(event.latLng.lat());
+    });
+  }
 
 ```
 Confusingly, the lat/lng are functions so remember the brackets to invoke them when using them.
@@ -252,12 +255,12 @@ We can overcome this using the bind method.  This is a method on a function that
 ```js
 //mapWrapper.js
 
-Mapwrapper.prototype.addClickEvent = function(){
-  google.maps.event.addListener(this.googleMap, 'click', function(event){
-    var position = { lat: event.latLng.lat(), lng: event.latLng.lng() }  
-    this.addMarker(position);
-  }.bind(this));
-}
+  addClickEvent: function(){
+    google.maps.event.addListener(this.googleMap, 'click', function(event){
+      var position = { lat: event.latLng.lat(), lng: event.latLng.lng() }  
+      this.addMarker(position);
+    }.bind(this));
+  }
 
 ```
 
@@ -278,12 +281,16 @@ var MapWrapper = function(container, coords, zoom){
   this.markers = []; //NEW
 }
 
-MapWrapper.prototype.addMarker = function(coords) {
-  var marker = new google.maps.Marker({
-    position: coords,      
-    map: this.googleMap
-  });
-  this.markers.push(marker); //NEW
+MapWrapper.prototype = {
+  
+  addMarker: function(coords){
+    var marker = new google.maps.Marker({
+      position: coords,
+      map: this.googleMap
+    });
+    this.markers.push(marker); //NEW
+  }
+
 }
 
 ```
@@ -292,12 +299,14 @@ And let's write a function that interates through our array of markers and adds 
 
 ```js
 //mapWrapper.js
+(in prototype)
+  // REMEMBER COMMA ON PREVIOUS LINE
 
-MapWrapper.prototype.bounceMarkers = function(){
-  this.markers.forEach(function(marker) {
-    marker.setAnimation(google.maps.Animation.BOUNCE)
-  })
-}
+  bounceMarkers: function(){
+    this.markers.forEach(function(marker) {
+      marker.setAnimation(google.maps.Animation.BOUNCE)
+    })
+  }
 
 
 ```
@@ -316,7 +325,7 @@ And lastly, we are going to assign our `bounceMarkers()` function to our button 
 
 ```js
 // app.js
-// (in initialize)
+(in initialize)
 
 var bounceButton = document.querySelector('#button-bounce-markers')
 bounceButton.addEventListener('click', mainMap.bounceMarkers.bind(mainMap))
