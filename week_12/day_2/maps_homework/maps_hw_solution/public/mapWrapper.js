@@ -1,7 +1,14 @@
 var MapWrapper = function (container, coords, zoom) {
   this.googleMap = new google.maps.Map(container, {
     center: coords,
-    zoom: zoom
+    zoom: zoom,
+    // Styling: uncomment lines below to hide roads
+    // styles: [{
+    //   'featureType': 'road',
+    //   'stylers': [
+    //   {'visibility': 'off'}
+    //   ]
+    // }],
   })
   this.markers = [];
   this.bounceMarkers = this.bounceMarkers.bind(this);
