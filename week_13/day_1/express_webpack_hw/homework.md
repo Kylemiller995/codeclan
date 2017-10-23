@@ -4,8 +4,12 @@ We've seen _a lot_ today! Tonight's homework is going to practice everything we 
 
 Based on the starter code:
 
-## Server API Tasks
-- Create an api for the films app using an /api/films restful route pattern and Express Router
+## Server API Task
+
+Create an api for the films app using an `/api/films` restful route pattern and Express Router
+
+Your API should have the following routes, following REST route-naming conventions
+
 - Index route to show all films
 - Get film by id (id is just an array index for now, until we hook up a database)
 - Create film
