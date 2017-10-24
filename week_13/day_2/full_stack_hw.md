@@ -12,7 +12,7 @@ Read over the code we did today. Don't be afraid to refer to it, but try not to 
 - create a `server.js` with `express` with index and \<your resource\> `controllers` that use the express `Router`
 - make a Query Helper. It should -
   - have functions to return the expected data (e.g. `all` returns all documents for that resource / collection)
-  - these functions `connect` to the database `find` and convert `toArray` (via callbacks). Then run the callback provided in next step supplying the `docs` as an argument...
+  - these functions `connect` to the database `find` and convert `toArray` (via callbacks). Then run the callback provided in next step supplying the `docs` as an argument
 - each route should use a Query Helper to get the necessary data from the database and provide a callback to the Query Helper that uses the `res` object to `send()` back JSON
 
 ### EXTENSION: If you feel ambitious, make a client / UI for your data
