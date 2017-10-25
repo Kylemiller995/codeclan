@@ -3,7 +3,6 @@ var MongoClient = require('mongodb').MongoClient
 var QueryHelper = function (dbUrl, collectionName) {
     this.dbUrl = dbUrl
     this.collectionName = collectionName
-    this.collectionName = 'countries'
 }
 
 QueryHelper.prototype.all = function (onQueryComplete) {
