@@ -1,4 +1,4 @@
-var filmsQueryHelper = require('../db/filmsQueryHelper.js')
+var filmsQueryHelper = require('../db/films_query_helper.js')
 var express = require('express')
 var filmsRouter = express.Router()
 
