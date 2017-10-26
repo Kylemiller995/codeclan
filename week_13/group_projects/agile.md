@@ -1,5 +1,7 @@
 # Agile and Scrum
 
+Intro video: https://www.youtube.com/watch?v=9TycLR0TqFA
+
 ## Group Project Roles
 
  - Product Owner
