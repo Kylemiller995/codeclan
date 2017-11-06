@@ -347,7 +347,7 @@ function sum(...args) {
 console.log( sum( 2, 3, 7 ) )
 ```
 
-It's an array! Woohoo. Why is it call rest? Because one way we can us it is to grab the *rest* of the parameters given to a function -
+It's an array! Woohoo. Why is it call rest? Because one way we can us it is to gather the *rest* of the parameters given to a function -
 
 ```js
 function sum(one, ...args){
