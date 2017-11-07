@@ -19,5 +19,5 @@ Add more information - you could include images or the preview song audio clips.
 
 AND/OR
 
-Add a dropdown to choose a genre of music to display - more URLS can be found at this page, just change the 'xml' part to 'json': https://rss.itunes.apple.com/us/?urlDesc=%2Fgenerator
+Add a dropdown to choose a genre of music to display - more URLS can be found at this page, make sure you have 'json' selected in the Format dropdown: https://rss.itunes.apple.com/us/?urlDesc=%2Fgenerator
 
